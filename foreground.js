@@ -1,7 +1,5 @@
 console.log("Running!");
 
-var targetNode = document.querySelector('div[aria-label="Timeline: Your Home Timeline"] > div');
-
 const config = { attributes: false, childList: true, subtree: false };
 
 const callback = (mutationList, observer) => {
@@ -34,7 +32,12 @@ const callback = (mutationList, observer) => {
     }
 };
 
-const observer = new MutationObserver(callback);
-observer.observe(targetNode1, config);
+function startObserver() {
+    var targetNode = document.querySelector('div[aria-label="Timeline: Your Home Timeline"] > div');
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+}
 
 // observer.disconnect();
+
+document.addEventListener('DOMContentLoaded', startObserver);
