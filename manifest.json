@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "CleanTwitter",
+    "name": "HealthyTweeps",
     "description": "Building a cleaner Twitter.",
     "version": "0.0.1",
     "icons": {
@@ -10,7 +10,7 @@
     },
     "options_page": "settings/settings.html",
     "action": {
-        "default_title": "CleanTwitter",
+        "default_title": "HealthyTweeps",
         "default_popup": "popup/popup.html"
     },
     "permissions": [
