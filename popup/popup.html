@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="popup.css">
-    <title>Chrome Addon v3: popup</title>
+    <title>CleanTwitter</title>
 </head>
+
 <body>
-    This is the <span class="special-text">HTML</span> body of the addon.
+
+    Sensitivity
+    <select id="color">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+    </select>
+
+    <label>
+        <input type="checkbox" id="status">
+        Enable
+    </label>
+
+    <div id="status"></div>
+    <button id="save">Save</button>
+
+    <script src="options.js"></script>
 </body>
+
 </html>
