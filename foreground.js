@@ -1,7 +1,15 @@
-// This script gets injected into any opened page
-// whose URL matches the pattern defined in the manifest
-// (see "content_script" key).
-// Several foreground scripts can be declared
-// and injected into the same or different pages.
+[...document.querySelectorAll("article")].forEach(
+    (item) => {
+        var content = item.querySelector('div[lang="en"]>span').innerText;
+        fetch('https://api.moderatehatespeech.com/api/v1/moderate/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ token: "test", text: content })
+        }).then(res => res.json())
+          .then(res => console.log(res));
 
-console.log("This prints to the console of the page (injected only if the page url matched)")
+    }
+);
