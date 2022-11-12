@@ -7,9 +7,9 @@ article[hidden="true"]::before{
     font-family: 'TwitterChirp';
     position: absolute;
     background: #f7f9f9;
-    padding-top: 12px;
+    padding-top: 11px;
     z-index: 9999;
-    padding-bottom: 27px;
+    padding-bottom: 28px;
     padding-left: 59px;
     font-size: 16px;
     padding-right: 54.5%;
@@ -21,7 +21,7 @@ article[hidden="true"]::after{
     position: absolute;
     z-index: 99999;
     font-family: 'TwitterChirp';
-    top: 33px;
+    top: 32px;
     padding-left: 58px;
     font-size: 12px;
 }
