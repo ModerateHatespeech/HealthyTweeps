@@ -1,0 +1,36 @@
+article[hidden="true"] {
+    height: 58px;
+}
+
+article[hidden="true"]::before{
+    content: "Hateful Content Filtered";
+    font-family: 'TwitterChirp';
+    position: absolute;
+    background: #f7f9f9;
+    padding-top: 12px;
+    z-index: 9999;
+    padding-bottom: 27px;
+    padding-left: 59px;
+    font-size: 16px;
+    padding-right: 54.5%;
+    font-weight: 700;
+}
+
+article[hidden="true"]::after{
+    content: "(Hover to Show)";
+    position: absolute;
+    z-index: 99999;
+    font-family: 'TwitterChirp';
+    top: 33px;
+    padding-left: 58px;
+    font-size: 12px;
+}
+
+
+article[hidden="true"]:hover::before, article[hidden="true"]:hover::after{
+    display: none;
+}
+
+article[hidden="true"]:hover{
+    height: auto;
+}

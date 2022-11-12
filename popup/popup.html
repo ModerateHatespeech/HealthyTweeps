@@ -1,28 +1,34 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <title>CleanTwitter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
-
-    Sensitivity
-    <select id="sensitivity">
+    <h3>CleanTwitter</h3>Filter
+    Sensitivity<select id="sensitivity">
         <option value="high">High</option>
         <option value="medium">Medium</option>
         <option value="low">Low</option>
     </select>
 
     <label>
-        <input type="checkbox" id="enable">
+
         Enable
-    </label>
+        <input type="checkbox" id="enable"></label>
 
     <div id="status"></div>
     <button id="save">Save</button>
 
     <script src="options.js"></script>
+
+
+
+
 </body>
 
 </html>
