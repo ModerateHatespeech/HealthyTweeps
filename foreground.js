@@ -1,6 +1,4 @@
-console.log("Running!");
-
-function processTweets() {
+function processTweets(threshold) {
     [...document.querySelectorAll("article")].forEach(
         (item) => {
             if (item.getAttribute("data-mod-status") != "true") {
@@ -15,7 +13,7 @@ function processTweets() {
                         body: JSON.stringify({ text: content.innerText })
                     }).then(res => res.json())
                         .then((res) => {
-                            if (res["confidence"] > 0.9 && res["class"] == "flag") {
+                            if (res["confidence"] > threshold && res["class"] == "flag") {
                                 item.setAttribute("hidden", "true");
                                 console.log("Hateful tweet detected!");
                             }
@@ -27,6 +25,20 @@ function processTweets() {
     );
 }
 
-setInterval(processTweets, 250);
-// observer.disconnect();
+chrome.storage.sync.get({
+    sensitivity: 'high',
+    enable: true
+}, function (items) {
+    if (items.enable) {
+        if (items.sensitivity == "high") {
+            setInterval(function() { processTweets(0.6) }, 250);
+        }
+        else if (items.sensitivity == "medium") {
+            setInterval(function() { processTweets(0.75) }, 250);
+        }
+        else if (items.sensitivity == "low") {
+            setInterval(function() { processTweets(0.9) }, 250);
+        }
+    }
+});
 
